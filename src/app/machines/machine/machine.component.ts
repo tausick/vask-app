@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Machine } from 'src/app/shared/machine';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-machine',
@@ -8,9 +9,14 @@ import { Machine } from 'src/app/shared/machine';
 })
 export class MachineComponent implements OnInit {
   @Input() machine: Machine;
+  @Output() start: EventEmitter<Machine> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onStart() {
+    this.start.emit(this.machine);
   }
 
 }

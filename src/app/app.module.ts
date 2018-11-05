@@ -7,7 +7,7 @@ import { MachinesComponent } from './machines/machines.component';
 import { MachineComponent } from './machines/machine/machine.component';
 
 
-]
+
 
 @NgModule({
   declarations: [
